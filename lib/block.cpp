@@ -121,16 +121,6 @@ typename V::value_type &vector_get_resize(V &v, const size_t index)
     return v[index];
 }
 
-const GlobalBlockConfig &Block::global_config(void) const
-{
-    return (*this)->block_data->global_config;
-}
-
-GlobalBlockConfig &Block::global_config(void)
-{
-    return (*this)->block_data->global_config;
-}
-
 InputPortConfig &Block::input_config(const size_t which_input)
 {
     return vector_get_resize((*this)->block_data->input_configs, which_input);
@@ -154,6 +144,18 @@ const OutputPortConfig &Block::output_config(const size_t which_output) const
 void Block::commit_config(void)
 {
     Theron::Actor &actor = *((*this)->block_actor);
+
+    //handle thread pool migration
+    const ThreadPool &thread_pool = this->global_config().thread_pool;
+    if (thread_pool and thread_pool != (*this)->block_actor->thread_pool)
+    {
+        boost::shared_ptr<BlockActor> old_actor = (*this)->block_actor;
+        (*this)->block_actor.reset(BlockActor::make(thread_pool));
+        (*this)->setup_actor();
+        wait_actor_idle((*this)->repr, *old_actor);
+    }
+
+    //update messages for in and out ports
     for (size_t i = 0; i < (*this)->worker->get_num_inputs(); i++)
     {
         InputUpdateMessage message;
@@ -166,7 +168,6 @@ void Block::commit_config(void)
         message.index = i;
         actor.GetFramework().Send(message, Theron::Address::Null(), actor.GetAddress());
     }
-
 }
 
 void Block::notify_active(void)
@@ -182,12 +183,4 @@ void Block::notify_inactive(void)
 void Block::notify_topology(const size_t, const size_t)
 {
     return;
-}
-
-void Block::set_thread_pool(const ThreadPool &thread_pool)
-{
-    boost::shared_ptr<BlockActor> old_actor = (*this)->block_actor;
-    (*this)->block_actor.reset(BlockActor::make(thread_pool));
-    (*this)->setup_actor();
-    wait_actor_idle((*this)->repr, *old_actor);
 }

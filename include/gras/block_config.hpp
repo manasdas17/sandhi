@@ -4,6 +4,7 @@
 #define INCLUDED_GRAS_BLOCK_CONFIG_HPP
 
 #include <gras/gras.hpp>
+#include <gras/thread_pool.hpp>
 #include <cstddef>
 
 namespace gras
@@ -13,6 +14,13 @@ namespace gras
 struct GRAS_API GlobalBlockConfig
 {
     GlobalBlockConfig(void);
+
+    /*!
+     * Merge the settings from another config.
+     * Non-defaults on this config stay,
+     * defaults will be overwritten.
+     */
+    void merge(const GlobalBlockConfig &config);
 
     /*!
      * Constrain the maximum number of items that
@@ -46,6 +54,14 @@ struct GRAS_API GlobalBlockConfig
      * Default = false.
      */
     bool interruptible_work;
+
+    /*!
+     * This member sets the thread pool for the block.
+     * The block's actor will migrate to the new pool.
+     *
+     * Default = null thread pool.
+     */
+    ThreadPool thread_pool;
 };
 
 //! Configuration parameters for an input port
