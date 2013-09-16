@@ -31,18 +31,14 @@ void ElementImpl::top_block_cleanup(void)
     this->executor->commit();
 }
 
-const GlobalBlockConfig &TopBlock::global_config(void) const
+void TopBlock::commit_config(void)
 {
-    return (*this)->top_config;
-}
-
-GlobalBlockConfig &TopBlock::global_config(void)
-{
-    return (*this)->top_config;
+    HierBlock::commit_config();
 }
 
 void TopBlock::commit(void)
 {
+    this->commit_config();
     this->start(); //ok to re-start, means update
 }
 
@@ -62,7 +58,7 @@ void TopBlock::start(void)
     {
         //send the global block config before alloc
         TopConfigMessage message;
-        message.config = (*this)->top_config;
+        message.config = (*this)->global_config;
         (*this)->bcast_prio_msg(message);
     }
     {
@@ -127,7 +123,7 @@ void TopBlock::wait(void)
         }
 
         //loop through blocks looking for non-done blocks with done inputs
-        BOOST_FOREACH(Apology::Worker *w, (*this)->executor->get_workers())
+        BOOST_FOREACH(Apology::Worker *w, (*this)->topology->get_workers())
         {
             BlockActor *actor = dynamic_cast<BlockActor *>(w->get_actor());
             if (actor->data->block_state == BLOCK_STATE_DONE) has_a_done = true;

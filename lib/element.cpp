@@ -84,6 +84,21 @@ std::string Element::to_string(void) const
     return (*this)->repr;
 }
 
+const GlobalBlockConfig &Element::global_config(void) const
+{
+    return (*this)->global_config;
+}
+
+GlobalBlockConfig &Element::global_config(void)
+{
+    return (*this)->global_config;
+}
+
+void Element::commit_config(void)
+{
+    //NOP -- this call gets overridden
+}
+
 void Element::adopt_element(const std::string &name, const Element &child)
 {
     if (child->parent) throw std::invalid_argument(str(boost::format(
