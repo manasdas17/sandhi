@@ -1,6 +1,5 @@
-########################################################################
-## GRAS - The GNU Radio Advanced Scheduler
-########################################################################
+GNU Niyantran
+---------
+Temporary name, may be changed later.
 
-Project page, build instructions, everything:
-https://github.com/guruofquality/gras/wiki
+A software to replace Labview. Built on GRAS (GNU Radio Advanced Scheduler) https://github.com/guruofquality/gras/wiki
