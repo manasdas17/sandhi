@@ -1,4 +1,4 @@
-GNU Niyantran
+Sandhi
 ---------
 Temporary name, may be changed later.
 
