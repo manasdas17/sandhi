@@ -20,19 +20,16 @@ Sandhi is conglomeration of lot of libraries and softwares. It uses GNU Radio at
 	python-cheetah python-lxml doxygen python-qt4 python-qwt5-qt4 libxi-dev \
 	libqt4-opengl-dev libqwt5-qt4-dev libfontconfig1-dev libxrender-dev
 
-*Please note that Sandhi has been known to **not** work libboost1.49 available in Ubuntu 12.10
+_Please note that Sandhi has been known to **not** work libboost1.49 available in Ubuntu 12.10_
 
 -------------------------
 ### <a href='http://forge.scilab.org/index.php/p/sciscipy/'> Sciscipy </a>
-Sciscipy is a must for Sandhi's control blocks to work; to install:
+Sciscipy is _must_ for Sandhi's control blocks to work; to install:
 
-> Clone sciscipy-1.0.0 from our repository<br><br>
-`git clone https://github.com/manojgudi/sciscipy-1.0.0.git`
+Clone sciscipy-1.0.0 from our repository; run _install_ script from the directory with **sudo** privileges to automatically pull all dependencies for Sciscipy, build and install it<br>
 
-> Run _install_ script from the directory with sudo privileges to automatically pull all dependencies for Sciscipy, build and install it.<br>
-`sudo ./install`
-
-
+	git clone https://github.com/manojgudi/sciscipy-1.0.0.git
+	sudo ./install
 
 -------------------------------------------------------------------------
 Get the source code
