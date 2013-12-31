@@ -8,11 +8,11 @@
   - sudo add-apt-repository "deb http://archive.ubuntu.com/ubuntu $(lsb_release -sc) multiverse"
   - sudo add-apt-repository "deb http://archive.ubuntu.com/ubuntu $(lsb_release -sc) restricted"
   - sudo apt-get update -q
-  - sudo apt-get install -q git cmake git-core autoconf automake  libtool g++ python-dev swig \
-    pkg-config libboost1.48-all-dev libfftw3-dev libcppunit-dev libgsl0-dev \
-    libusb-dev sdcc libsdl1.2-dev python-wxgtk2.8 python-numpy \
-    python-cheetah python-lxml doxygen python-qt4 python-qwt5-qt4 libxi-dev \
-    libqt4-opengl-dev libqwt5-qt4-dev libfontconfig1-dev libxrender-dev
+  - sudo apt-get install -q git cmake git-core autoconf automake  libtool g++ python-dev swig 
+  - sudo apt-get install -q pkg-config libboost1.48-all-dev libfftw3-dev libcppunit-dev libgsl0-dev 
+  - sudo apt-get install -q libusb-dev sdcc libsdl1.2-dev python-wxgtk2.8 python-numpy 
+  - sudo apt-get install  -q python-cheetah python-lxml doxygen python-qt4 python-qwt5-qt4 libxi-dev 
+  - sudo apt-get install -q libqt4-opengl-dev libqwt5-qt4-dev libfontconfig1-dev libxrender-dev
 
  before_script:
    - git submodule init
