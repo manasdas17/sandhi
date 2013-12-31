@@ -4,6 +4,7 @@
 
  before_install:
   - sudo apt-get update -q
+  - cat /etc/sources.list
   - sudo apt-get install -q git cmake git-core autoconf automake  libtool g++ python-dev swig \
     pkg-config libboost1.48-all-dev libfftw3-dev libcppunit-dev libgsl0-dev \
     libusb-dev sdcc libsdl1.2-dev python-wxgtk2.8 python-numpy \
@@ -21,6 +22,6 @@
 
  notifications:
    email:
-     - manoj.p.gudi@gmail.com, u.srikant.patnaik@gmail.com
+     - manoj.p.gudi@gmail.com
    on_success: always
    on_failure: always
