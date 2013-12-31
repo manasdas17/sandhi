@@ -59,5 +59,7 @@ Build and Install instructions
     sudo make install
     sudo ldconfig
 
+#### Current Build Status  [![Build Status](https://travis-ci.org/manojgudi/sandhi.png)](https://travis-ci.org/manojgudi/sandhi)
+
 
 
