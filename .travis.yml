@@ -4,6 +4,9 @@
 
  before_install:
   - sudo add-apt-repository "deb http://archive.canonical.com/ubuntu $(lsb_release -sc) partner"
+  - sudo add-apt-repository "deb http://archive.ubuntu.com/ubuntu $(lsb_release -sc) universe"
+  - sudo add-apt-repository "deb http://archive.ubuntu.com/ubuntu $(lsb_release -sc) multiverse"
+  - sudo add-apt-repository "deb http://archive.ubuntu.com/ubuntu $(lsb_release -sc) restricted"
   - sudo apt-get update -q
   - sudo apt-get install -q git cmake git-core autoconf automake  libtool g++ python-dev swig \
     pkg-config libboost1.48-all-dev libfftw3-dev libcppunit-dev libgsl0-dev \
