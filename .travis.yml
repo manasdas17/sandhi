@@ -1,6 +1,8 @@
  language: cpp
 
  compiler: gcc
+ 
+ cache: apt
 
  before_install:
   - sudo add-apt-repository "deb http://archive.canonical.com/ubuntu $(lsb_release -sc) partner"
