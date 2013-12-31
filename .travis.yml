@@ -3,8 +3,8 @@
  compiler: gcc
 
  before_install:
+  - sudo bash 'echo -e "deb http://archive.canonical.com/ubuntu precise partner \ndeb-src http://archive.canonical.com/ubuntu precise partner"' >> /etc/apt/sources.list
   - sudo apt-get update -q
-  - cat /etc/apt/sources.list
   - sudo apt-get install -q git cmake git-core autoconf automake  libtool g++ python-dev swig \
     pkg-config libboost1.48-all-dev libfftw3-dev libcppunit-dev libgsl0-dev \
     libusb-dev sdcc libsdl1.2-dev python-wxgtk2.8 python-numpy \
