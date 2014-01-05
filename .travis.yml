@@ -5,6 +5,7 @@
  cache: apt
 
  before_install:
+  - cat /proc/cpuinfo
   - sudo add-apt-repository "deb http://archive.canonical.com/ubuntu $(lsb_release -sc) partner"
   - sudo add-apt-repository "deb http://archive.ubuntu.com/ubuntu $(lsb_release -sc) universe"
   - sudo add-apt-repository "deb http://archive.ubuntu.com/ubuntu $(lsb_release -sc) multiverse"
@@ -23,8 +24,8 @@
    - cd build
    - cmake ../
 
- script: make -j 2
-
+ script: make -j 4
+ 	 make test
  notifications:
    email:
      - manoj.p.gudi@gmail.com
