@@ -26,7 +26,6 @@
 
  script: 
    - make -j 4
-   - make test
  notifications:
    email:
      - manoj.p.gudi@gmail.com
