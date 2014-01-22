@@ -14,7 +14,7 @@ Sandhi is conglomeration of lot of libraries and softwares. It uses GNU Radio at
 *If on Ubuntu 12.04, one can directly install using command*-
 
 
-	sudo apt-get -y install git-core autoconf automake  libtool g++ python-dev swig \
+	sudo apt-get -y install git-core autoconf automake make libtool g++ python-dev swig \
 	pkg-config libboost1.48-all-dev libfftw3-dev libcppunit-dev libgsl0-dev \
 	libusb-dev sdcc libsdl1.2-dev python-wxgtk2.8 python-numpy \
 	python-cheetah python-lxml doxygen python-qt4 python-qwt5-qt4 libxi-dev \
