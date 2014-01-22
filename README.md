@@ -29,6 +29,7 @@ Sciscipy is _must_ for Sandhi's control blocks to work; to install:
 Clone sciscipy-1.0.0 from our repository; run _install_ script from the directory with **sudo** privileges to automatically pull all dependencies for Sciscipy, build and install it<br>
 
 	git clone https://github.com/manojgudi/sciscipy-1.0.0.git
+	cd sciscipy-1.0.0/
 	sudo ./install
 
 -------------------------------------------------------------------------
