@@ -18,7 +18,8 @@ Sandhi is conglomeration of lot of libraries and softwares. It uses GNU Radio at
 	pkg-config libboost1.48-all-dev libfftw3-dev libcppunit-dev libgsl0-dev \
 	libusb-dev sdcc libsdl1.2-dev python-wxgtk2.8 python-numpy \
 	python-cheetah python-lxml doxygen python-qt4 python-qwt5-qt4 libxi-dev \
-	libqt4-opengl-dev libqwt5-qt4-dev libfontconfig1-dev libxrender-dev
+	libqt4-opengl-dev libqwt5-qt4-dev libfontconfig1-dev libxrender-dev \
+	python-serial python-matplotlib
 
 _Please note that Sandhi has been known to **not** work libboost1.49 available in Ubuntu 12.10_
 
@@ -73,4 +74,4 @@ FAQ (Frequently Asked Questions)
 Mostly you don't have sufficient permissions to access /dev/ttyUSB0 (which is SBHS device node in Ubuntu). To solve this, just add your user to _dialout_ group.
 	
 	sudo adduser `whoami` dialout
-Reboot and check.
+**Logout User** and check.
