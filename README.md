@@ -63,6 +63,9 @@ Build and Install instructions
 
 #### Current Build Status  [![Build Status](https://travis-ci.org/manojgudi/sandhi.png)](https://travis-ci.org/manojgudi/sandhi)
 
+Builds for Ubuntu 12.04:
+http://fossee.in/sandhi_builds/
+
 
 -------------------------------------------------------------------------
 FAQ (Frequently Asked Questions)
